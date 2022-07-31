@@ -2,7 +2,7 @@
 name = "d-pool"
 version = "0.5.1"
 authors = ["jake <jh@discordapp.com>", "MicroondasV2 <microondasv2@cloudflare.com>"]
-edition = "2022"
+edition = "2021"
 license = "APACHE 2.0"
 description = "A dynamically-sized object pool."
 repository = "https://github.com/Kenabot/d-pool"
