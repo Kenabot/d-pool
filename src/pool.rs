@@ -58,6 +58,22 @@ impl<T: DynamicReset> DynamicPool<T> {
         })
     }
 
+    pub fn len(&self) -> usize {
+        self.data.items.len()
+    }
+
+    pub fn is_empty(&self) -> bool {
+        self.data.items.is_empty()
+    }
+
+    pub fn is_full(&self) -> bool {
+        self.data.items.is_full()
+    }
+
+    pub fn capacity(&self) -> usize {
+        self.data.items.capacity()
+    }
+
     #[inline]
     pub fn available(&self) -> usize {
         self.data.items.len()
@@ -81,7 +97,6 @@ impl<T: DynamicReset> Clone for DynamicPool<T> {
         }
     }
 }
-
 struct PoolData<T> {
     items: ArrayQueue<T>,
     create: Box<dyn Fn() -> T + Sync + Send + 'static>,
